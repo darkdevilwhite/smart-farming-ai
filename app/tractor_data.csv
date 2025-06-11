@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 name,latitude,longitude,phone
 Tractor A,17.385044,78.486671,9876543210
 Tractor B,17.422162,78.466232,9876543211
 Tractor C,17.400000,78.480000,9876543212
+=======
+id,latitude,longitude,owner_name,contact
+1,17.385044,78.486671,Ravi Kumar,9876543210
+2,17.444389,78.377228,Anil Reddy,9876543211
+>>>>>>> 7adf10164b4cefe70af37a31b935d9bcc1037ae9

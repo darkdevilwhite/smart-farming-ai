@@ -1,4 +1,10 @@
 streamlit
 pandas
+<<<<<<< HEAD
 scikit-learn
 requests
+=======
+xgboost
+scikit-learn
+requests
+>>>>>>> 7adf10164b4cefe70af37a31b935d9bcc1037ae9
