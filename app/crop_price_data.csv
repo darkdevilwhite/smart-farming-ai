@@ -1,0 +1,4 @@
+crop_type,region_code,day_of_year,rainfall_mm,price
+Wheat,101,45,30,1800
+Rice,102,120,40,2000
+Maize,103,220,20,1500
