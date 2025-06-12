@@ -1,19 +1,18 @@
 import requests
 
-def get_weather(city):
-    api_key = "your_openweather_api_key"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
-    res = requests.get(url).json()
-    if res.get("main"):
-        temp = res["main"]["temp"] - 273.15
-<<<<<<< HEAD
-        desc = res["weather"][0]["description"]
-        return f"Temperature: {temp:.1f}°C, {desc}"
-    else:
-        return "City not found or API limit reached"
-=======
-        weather = res["weather"][0]["description"]
-        return f"Temperature: {temp:.2f}°C | Weather: {weather}"
-    else:
-        return "City not found"
->>>>>>> 7adf10164b4cefe70af37a31b935d9bcc1037ae9
+def get_weather(city="Hyderabad"):
+    api_key = "cf9614f54438cc6bb359d40a1892b64b"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        if data.get("cod") != 200:
+            return f"Weather data not found for {city}"
+
+        weather = data["weather"][0]["description"]
+        temperature = data["main"]["temp"]
+        return f"{city} Weather: {weather}, {temperature}°C"
+    except Exception as e:
+        return f"Error retrieving weather data: {str(e)}"
