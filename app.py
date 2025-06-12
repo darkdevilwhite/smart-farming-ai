@@ -49,3 +49,4 @@ elif menu == "Weather Forecast":
     forecast = get_weather(city)
     if forecast:
         st.write(forecast)
+# Force redeploy on Streamlit
