@@ -1,3 +1,4 @@
+ HEAD
 altair==5.5.0
 anyio==4.8.0
 argon2-cffi==23.1.0
@@ -121,3 +122,11 @@ webcolors==24.11.1
 webencodings==0.5.1
 websocket-client==1.8.0
 widgetsnbextension==4.0.13
+=======
+streamlit
+pandas
+scikit-learn
+requests
+azure-storage-blob
+numpy>=2.3.0
+>>>>>>> f1e8d30 (Add GitHub Actions workflow for deployment)
