@@ -55,6 +55,5 @@ elif menu == "Weather Forecast":
     if forecast:
         st.write(forecast)
 # Force redeploy on Streamlit
-=======
     st.write(get_weather(city))
  f1e8d30 (Add GitHub Actions workflow for deployment)
