@@ -77,6 +77,7 @@ prompt_toolkit==3.0.50
 protobuf==6.31.1
 psutil==7.0.0
 pure_eval==0.2.3
+sys_platform == 'win32'
 pyarrow==20.0.0
 pycparser==2.22
 pydeck==0.9.1
