@@ -50,10 +50,6 @@ elif menu == "Find Tractor":
 elif menu == "Weather Forecast":
     st.subheader("Weather for Your Location")
     city = st.text_input("Enter City", "Hyderabad")
- HEAD
     forecast = get_weather(city)
     if forecast:
         st.write(forecast)
-# Force redeploy on Streamlit
-    st.write(get_weather(city))
- f1e8d30 (Add GitHub Actions workflow for deployment)
