@@ -4,13 +4,9 @@ import pandas as pd
 import pickle
 from weather_forecast import get_weather  # ✅ Correct import
 
-# Load model
-try:
-    with open("crop_price_model.pkl", "rb") as f:
-        model = pickle.load(f)
-except FileNotFoundError:
-    st.error("Model file not found. Make sure 'crop_price_model.pkl' is in the project root.")
-    st.stop()
+# Temporary: Disable model loading
+st.warning("⚠️ Model file not found. Crop price prediction is temporarily disabled.")
+model = None  # Placeholder
 
 st.title("🚜 Smart Tractor Rental & Crop Price Forecast")
 
@@ -29,14 +25,18 @@ if menu == "Crop Price Prediction":
     )
     df_input = pd.get_dummies(df_input)
 
-    features = model.feature_names_in_
-    for feat in features:
-        if feat not in df_input.columns:
-            df_input[feat] = 0
-    df_input = df_input[features]
+    # Placeholder feature alignment (safe for now)
+    if model:
+        features = model.feature_names_in_
+        for feat in features:
+            if feat not in df_input.columns:
+                df_input[feat] = 0
+        df_input = df_input[features]
 
-    pred_price = model.predict(df_input)[0]
-    st.success(f"Estimated Crop Price: ₹{pred_price:.2f}")
+        pred_price = model.predict(df_input)[0]
+        st.success(f"Estimated Crop Price: ₹{pred_price:.2f}")
+    else:
+        st.info("Prediction is currently disabled. Model not available.")
 
 elif menu == "Find Tractor":
     st.subheader("Available Tractors Near You")
