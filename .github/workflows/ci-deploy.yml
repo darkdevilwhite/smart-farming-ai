@@ -1,4 +1,4 @@
-name: CI & Deploy Smart Farming App
+name: CI - Smart Farming App
 
 on:
   push:
@@ -7,8 +7,10 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -20,7 +22,7 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Streamlit smoke test
+    - name: Streamlit Smoke Test
       run: |
         nohup streamlit run app.py --server.headless true --server.port 8501 &
         sleep 15
